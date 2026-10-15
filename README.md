@@ -1,25 +1,24 @@
-# 🎈 Blank app template
 
-A simple Streamlit app template for you to modify!
+import streamlit as st
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+st.set_page_config(
+    page_title="AutoTech Navigator",
+    page_icon="🚗"
+)
 
-### How to run it on your own machine
+st.title("🚗 AutoTech Navigator")
+st.subheader("Capital One Auto Finance Training Demo")
 
-Prerequisite: install `uv` if you don't already have it.
+employee = st.text_input("Employee Name")
 
-```
-$ curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+st.write("Weekly Training Progress")
+st.progress(0.50)
 
-1. Sync the dependencies
+st.image(
+    "https://images.unsplash.com/photo-1493238792000-8113da705763",
+    caption="Automotive Training"
+)
 
-   ```
-   $ uv sync
-   ```
+if st.button("Start Training"):
+    st.success(f"Welcome, {employee}!")
 
-2. Run the app
-
-   ```
-   $ uv run streamlit run streamlit_app.py
-   ```
